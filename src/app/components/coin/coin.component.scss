@@ -1,13 +1,21 @@
 .crypto-item {
     width: 100%;
     height: 35px;
-    overflow: hidden; /* para ocultar cualquier contenido que no quepa en el div */
-    margin: 10px; /* para agregar un margen entre cada div */
-    display: flex; /* para alinear el contenido dentro del div */
+    overflow: hidden; 
+    margin: 10px; 
+    padding: 3px;
+    display: flex; 
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; /* para alinear el contenido horizontalmente */
+    align-items: center; 
+    cursor: pointer;
+    border:  1px;
   }
+.crypto-item:hover{
+  background-color: rgb(234, 234, 234);
+  border-color: rgb(170, 170, 170);
+  border:solid 1px;
+}
   
   .crypto-item img {
     width: 25px; /* para establecer el tamaño de la imagen */

@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Coin } from 'src/app/class/Coin';
 import { ConversorCoinsService } from '../../services/conversor-coins.service';
 

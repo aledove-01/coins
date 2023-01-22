@@ -1,9 +1,8 @@
 <div class="crypto-list">
     <div *ngFor="let coin of listCoins">
-      <app-coin [coin]=coin  ></app-coin>
+      <app-coin *ngIf="coin.id != selCoin.id" [coin]=coin></app-coin>
     </div>
-     
-  </div>
+</div>
  
 
 

@@ -17,9 +17,27 @@ export class CoinsComponent implements OnInit, OnDestroy{
 
   listCoins: Coin[] = [];
   coinIds:number[] = [];
-  private intervalSubscription: Subscription = Subscription.EMPTY;
+  selCoin:Coin = {
+    id: 0,
+    name: '',
+    symbol: '',
+    slug: '',
+    circulating_supply: 0,
+    total_supply: 0,
+    max_supply: 0,
+    last_updated: '',
+    self_reported_circulating_supply: 0,
+    self_reported_market_cap: 0,
+    price: 0,
+    logo: '',
+  };
 
+  private intervalSubscription: Subscription = Subscription.EMPTY;
+  
   ngOnInit() {
+    this.conversorCoinsService.coinSel$.subscribe(coinSel => {
+      this.selCoin = coinSel;
+    });
     this.coinsService.getListCoins().subscribe(colCoins => {
       this.listCoins = colCoins;
       this.coinIds = this.listCoins.map(coin => coin.id);

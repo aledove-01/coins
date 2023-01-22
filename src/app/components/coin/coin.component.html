@@ -1,10 +1,8 @@
-<div class="crypto-item">
+<div class="crypto-item" (click)="onClickSelCrypto()">
     <div class="crypto-price">{{calculateConversion | number: '.1-2'}}</div>
     <img src={{coin.logo}} alt="Nombre criptomoneda">
     <div class="crypto-name">{{coin.name}}</div>
     <div class="crypto-symbol">{{coin.symbol}}</div>
     <div class="crypto-price">$ {{coin.price | currency: 'USD'}} </div>
-    <div class="crypto-price">
-        <button type="button" class="button is-small" (click)="onClickSelCrypto()">-></button>
-    </div>
+   
 </div>
