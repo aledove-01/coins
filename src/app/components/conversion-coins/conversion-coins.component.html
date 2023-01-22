@@ -3,13 +3,11 @@
       Cripto seleccionada {{selCoin.name}}
     </p>
     <div class="panel-block">
-      <p class="control has-icons-left">
+      
         <input class="input is-success" type="number" (change)="ngOnChanges()" [(ngModel)]="cantCoin" placeholder="Importe a calcular"/>
 
-        <span class="icon is-left">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </span>
-      </p>
+       
+      <button class="button" (click)="ngOnChanges()">Calcular</button>
     </div>
     
    

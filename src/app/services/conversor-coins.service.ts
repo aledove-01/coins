@@ -39,11 +39,13 @@ export class ConversorCoinsService {
   coinSel$ = this.coinSel.asObservable();
   valueConversion$ = this.valueCalculate.asObservable();
 
-
+  updateCalculo(){
+    this.valueCalculate.next(this.valueForCalculate);
+  }
   updateValueForCalculate(value:number){
     //Update value and emit event
     this.valueForCalculate = value;
-    this.valueCalculate.next(this.valueForCalculate);
+    this.updateCalculo();
   }
   getValueForCalculate(){
     return this.valueForCalculate;

@@ -8,15 +8,28 @@ import { ConversorCoinsService } from '../../services/conversor-coins.service';
   styleUrls: ['./conversion-coins.component.scss']
 })
 export class ConversionCoinsComponent implements OnInit, OnChanges {
-  constructor(
-    private conversorCoinsService:ConversorCoinsService
-  ){ }
-  ngOnChanges(): void {
+  selCoin: Coin;
+  cantCoin = 0;
+
+  constructor(private conversorCoinsService: ConversorCoinsService) {
+    this.selCoin = this.conversorCoinsService.getSelectedCoin();
+  }
+
+  ngOnInit() {
+    this.selCoin = this.conversorCoinsService.getSelectedCoin();
+    this.conversorCoinsService.coinSel$.subscribe(coinSel => {
+      this.selCoin = coinSel;
+      this.cantCoin = 0;
+      this.updateValueForCalculate();
+    });
+  }
+
+  ngOnChanges() {
+    this.updateValueForCalculate();
+  }
+
+  private updateValueForCalculate() {
     this.conversorCoinsService.updateValueForCalculate(this.cantCoin);
   }
-  ngOnInit(): void {
-    this.conversorCoinsService.coinSel$.subscribe(coinSel => this.selCoin = coinSel);
-  }
-  selCoin:Coin = this.conversorCoinsService.getSelectedCoin();
-  cantCoin = 0;
 }
+

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Coin } from '../class/Coin';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CoinsService {
 
   constructor(
@@ -11,6 +13,22 @@ export class CoinsService {
   ) { }
 
   getListCoins(){
-    return this.http.get('http://localhost:5118/API/AccessDataCryptoCoins/TopCoins');
+    return this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/TopCoins');
+  }
+  getCoinsMeta(ids:number[]){
+    let params = new HttpParams();
+    ids.forEach(id => {
+        params = params.append('ids', id);
+    });
+    let res = this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/MetadataCoins',{params});
+    return res;
+  }
+  getCoinsPrice(ids:number[]){
+    let params = new HttpParams();
+    ids.forEach(id => {
+        params = params.append('ids', id);
+    });
+    let res = this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/PriceCoins',{params});
+    return res;
   }
 }
