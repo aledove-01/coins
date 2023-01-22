@@ -1,10 +1,10 @@
 <article class="panel ">
     <p class="panel-heading">
-      Cripto seleccionada 
+      Cripto seleccionada {{selCoin.name}}
     </p>
     <div class="panel-block">
       <p class="control has-icons-left">
-        <input class="input is-success" type="number" [(ngModel)]="cantCoin" placeholder="Importe a calcular">
+        <input class="input is-success" type="number" (change)="ngOnChanges()" [(ngModel)]="cantCoin" placeholder="Importe a calcular"/>
 
         <span class="icon is-left">
           <i class="fas fa-search" aria-hidden="true"></i>

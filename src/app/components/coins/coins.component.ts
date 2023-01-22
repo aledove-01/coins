@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Coin } from 'src/app/class/coin';
+import { Component} from '@angular/core';
+import { Coin } from 'src/app/class/Coin';
 
 @Component({
   selector: 'app-coins',
@@ -7,6 +7,7 @@ import { Coin } from 'src/app/class/coin';
   styleUrls: ['./coins.component.scss']
 })
 export class CoinsComponent {
+  
   listCoins:Array<Coin> = [
     {
       "id": 1,
@@ -17,9 +18,8 @@ export class CoinsComponent {
       "total_supply": 0,
       "max_supply": 0,
       "last_updated": "0001-01-01T00:00:00",
-      "self_reported_circulating_supply": null,
-      "self_reported_market_cap": null,
-      "quote": null,
+      "self_reported_circulating_supply": 0,
+      "self_reported_market_cap": 0,
       "price": 23555,
       "logo": 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png'
     },
@@ -32,11 +32,14 @@ export class CoinsComponent {
       "total_supply": 0,
       "max_supply": 0,
       "last_updated": "0001-01-01T00:00:00",
-      "self_reported_circulating_supply": null,
-      "self_reported_market_cap": null,
-      "quote": null,
+      "self_reported_circulating_supply": 0,
+      "self_reported_market_cap": 0,
       "price": 2500,
       "logo": 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
     },
   ];
+
+  onSelectedCrypto(coin:Coin){
+    console.log(coin);
+  }
 }

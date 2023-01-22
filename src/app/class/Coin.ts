@@ -7,9 +7,9 @@ export interface Coin {
     total_supply: number
     max_supply: number
     last_updated: string
-    self_reported_circulating_supply: any
-    self_reported_market_cap: any
-    quote: any
+    self_reported_circulating_supply: number
+    self_reported_market_cap: number
+    //quote: any
     price: number
     logo: string
   }

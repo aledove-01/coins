@@ -1,1 +1,10 @@
-<p>coin works!</p>
+<div class="crypto-item">
+    <div>{{calculateConversion}}</div>
+    <img src={{coin.logo}} alt="Nombre criptomoneda">
+    <div class="crypto-name">{{coin.name}}</div>
+    <div class="crypto-symbol">{{coin.symbol}}</div>
+    <div class="crypto-price">$ {{coin.price}} </div>
+    <div class="crypto-price">
+        <button type="button" class="button is-small" (click)="onClickSelCrypto()">-></button>
+    </div>
+</div>

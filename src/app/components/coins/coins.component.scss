@@ -5,32 +5,3 @@
     width: 400px;
   }
 
-.crypto-item {
-    width: 100%;
-    height: 35px;
-    overflow: hidden; /* para ocultar cualquier contenido que no quepa en el div */
-    margin: 10px; /* para agregar un margen entre cada div */
-    display: flex; /* para alinear el contenido dentro del div */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; /* para alinear el contenido horizontalmente */
-  }
-  
-  .crypto-item img {
-    width: 25px; /* para establecer el tamaño de la imagen */
-    height: 25px;
-    margin-right: 5px;
-  }
-  
-  .crypto-name {
-    font-size: 20px; 
-    width: 150px;
-  }
-  .crypto-symbol {
-    font-size: 19px;
-    width: 80px;
-  }
-  .crypto-price {
-    font-size: 18px;
-    width: 100px;
-  }
