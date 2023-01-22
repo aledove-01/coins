@@ -20,15 +20,13 @@ export class CoinsService {
     ids.forEach(id => {
         params = params.append('ids', id);
     });
-    let res = this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/MetadataCoins',{params});
-    return res;
+    return this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/MetadataCoins',{params});
   }
   getCoinsPrice(ids:number[]){
     let params = new HttpParams();
     ids.forEach(id => {
         params = params.append('ids', id);
     });
-    let res = this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/PriceCoins',{params});
-    return res;
+    return this.http.get<Coin[]>('http://localhost:5118/API/AccessDataCryptoCoins/PriceCoins',{params});
   }
 }

@@ -58,7 +58,7 @@ export class CoinsComponent implements OnInit, OnDestroy{
       if (colCoins != null){
         console.log('consulta',colCoins)
         this.listCoins.forEach(coin => {
-          let price:number | undefined = colCoins.find(coinPrice => coinPrice.id === coin.id)?.price;
+          const price:number | undefined = colCoins.find(coinPrice => coinPrice.id === coin.id)?.price;
           coin.price = Number(price);
         });
         this.conversorCoinsService.updateCalculo();

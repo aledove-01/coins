@@ -2,12 +2,12 @@
     <p class="panel-heading">
       Cripto seleccionada 
     </p>
-    <div class="panel-block" *ngIf="selCoin.id != 0">
+    <div class="panel-block" *ngIf="selCoin.id !== 0">
       <app-coin [coin]=selCoin></app-coin>
       <input class="input is-success" type="number" (change)="ngOnChanges()" [(ngModel)]="cantCoin" placeholder="Importe a calcular" maxlength="10" min="0" max="10"/>
       <button class="button" (click)="ngOnChanges()">Calcular</button>
     </div>
-    <div class="panel-block" *ngIf="selCoin.id == 0">
+    <div class="panel-block" *ngIf="selCoin.id === 0">
       <p>Seleccione una criptomoneda</p>
     </div>
    
